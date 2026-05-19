@@ -1,0 +1,15 @@
+{
+  "name": "BahanCair",
+  "type": "object",
+  "properties": {
+    "nama": { "type": "string", "description": "Nama bahan cair" },
+    "kategori": { "type": "string", "enum": ["Bibit", "Alkohol", "Aqua Des", "DPG", "IPM", "Lainnya"], "description": "Kategori bahan cair" },
+    "vendor": { "type": "string", "description": "Nama vendor/supplier (wajib untuk Bibit)" },
+    "harga_rupiah": { "type": "number", "description": "Harga per kg/liter dalam Rupiah" },
+    "harga_dollar": { "type": "number", "description": "Harga per kg/liter dalam Dollar" },
+    "satuan": { "type": "string", "enum": ["kg", "liter", "gram", "ml"], "default": "kg", "description": "Satuan harga" },
+    "stok": { "type": "number", "description": "Jumlah stok" },
+    "catatan": { "type": "string", "description": "Catatan tambahan" }
+  },
+  "required": ["nama", "kategori", "harga_rupiah", "satuan"]
+}

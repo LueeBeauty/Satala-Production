@@ -1,0 +1,11 @@
+{
+  "name": "KursSettings",
+  "type": "object",
+  "properties": {
+    "kurs_dollar": { "type": "number", "description": "Kurs 1 USD ke Rupiah" },
+    "is_manual": { "type": "boolean", "default": false, "description": "True jika kurs di-set manual, false jika mengikuti live" },
+    "updated_by": { "type": "string", "description": "Diupdate oleh" },
+    "catatan": { "type": "string", "description": "Catatan update kurs" }
+  },
+  "required": ["kurs_dollar"]
+}

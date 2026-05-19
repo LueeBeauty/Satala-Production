@@ -1,0 +1,13 @@
+{
+  "name": "Spray",
+  "type": "object",
+  "properties": {
+    "nama": { "type": "string", "description": "Nama spray" },
+    "tipe": { "type": "string", "enum": ["Continuous", "Biasa"], "description": "Tipe spray: Continuous atau Biasa" },
+    "harga_rupiah": { "type": "number", "description": "Harga dalam Rupiah" },
+    "harga_dollar": { "type": "number", "description": "Harga dalam Dollar (opsional)" },
+    "catatan": { "type": "string", "description": "Catatan tambahan" },
+    "stok": { "type": "number", "description": "Jumlah stok" }
+  },
+  "required": ["nama", "tipe", "harga_rupiah"]
+}

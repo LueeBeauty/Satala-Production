@@ -1,0 +1,14 @@
+{
+  "name": "Botol",
+  "type": "object",
+  "properties": {
+    "nama": { "type": "string", "description": "Nama/kode botol" },
+    "ukuran_label_ml": { "type": "number", "description": "Ukuran label botol (ml)" },
+    "ukuran_aktual_ml": { "type": "number", "description": "Ukuran aktual/overfill botol (ml), kosongkan jika sama dengan label" },
+    "harga_rupiah": { "type": "number", "description": "Harga dalam Rupiah" },
+    "harga_dollar": { "type": "number", "description": "Harga dalam Dollar (opsional)" },
+    "catatan_teknis": { "type": "string", "description": "Catatan teknis misal: isi asli 33ml, rawan rembes" },
+    "stok": { "type": "number", "description": "Jumlah stok" }
+  },
+  "required": ["nama", "ukuran_label_ml", "harga_rupiah"]
+}

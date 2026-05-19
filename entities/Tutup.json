@@ -1,0 +1,12 @@
+{
+  "name": "Tutup",
+  "type": "object",
+  "properties": {
+    "nama": { "type": "string", "description": "Nama/kode tutup botol" },
+    "harga_rupiah": { "type": "number", "description": "Harga dalam Rupiah" },
+    "harga_dollar": { "type": "number", "description": "Harga dalam Dollar (opsional)" },
+    "catatan": { "type": "string", "description": "Catatan tambahan" },
+    "stok": { "type": "number", "description": "Jumlah stok" }
+  },
+  "required": ["nama", "harga_rupiah"]
+}
