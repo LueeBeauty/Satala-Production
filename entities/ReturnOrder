@@ -1,0 +1,97 @@
+{
+  "name": "ReturnOrder",
+  "type": "object",
+  "properties": {
+    "return_number": {
+      "type": "string",
+      "description": "Nomor return"
+    },
+    "production_order_id": {
+      "type": "string",
+      "description": "ID PO asal jika ada"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Nama brand"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "return_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "qty_returned": {
+      "type": "number",
+      "description": "Jumlah unit yang dikembalikan"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "cacat_produksi",
+        "salah_kirim",
+        "kadaluarsa",
+        "permintaan_customer",
+        "lainnya"
+      ],
+      "description": "Alasan return"
+    },
+    "return_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "diterima",
+        "diproses",
+        "selesai",
+        "ditolak"
+      ],
+      "default": "pending"
+    },
+    "action_taken": {
+      "type": "string",
+      "enum": [
+        "rework",
+        "dispose",
+        "restock",
+        "pending"
+      ],
+      "default": "pending",
+      "description": "Tindakan yang diambil"
+    },
+    "received_by": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "components": {
+      "type": "array",
+      "description": "Komponen yang diretur",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "number"
+          },
+          "condition": {
+            "type": "string",
+            "enum": [
+              "baik",
+              "rusak",
+              "tidak_layak"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "brand_name",
+    "return_date",
+    "qty_returned",
+    "reason"
+  ]
+}

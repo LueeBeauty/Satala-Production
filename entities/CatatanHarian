@@ -1,0 +1,72 @@
+{
+  "name": "CatatanHarian",
+  "type": "object",
+  "properties": {
+    "tanggal": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal catatan"
+    },
+    "shift": {
+      "type": "string",
+      "enum": [
+        "Pagi",
+        "Siang",
+        "Malam"
+      ],
+      "description": "Shift kerja"
+    },
+    "aktivitas": {
+      "type": "string",
+      "enum": [
+        "Filling",
+        "QC",
+        "Packing",
+        "Mixing",
+        "Labeling",
+        "Pengiriman",
+        "Lainnya"
+      ],
+      "description": "Jenis aktivitas yang dilakukan"
+    },
+    "operator": {
+      "type": "string",
+      "description": "Nama operator / petugas"
+    },
+    "jumlah_output": {
+      "type": "number",
+      "description": "Jumlah output yang dihasilkan"
+    },
+    "satuan_output": {
+      "type": "string",
+      "description": "Satuan output (pcs, botol, dll)"
+    },
+    "nama_produk": {
+      "type": "string",
+      "description": "Nama produk yang dikerjakan"
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan kegiatan harian"
+    },
+    "kendala": {
+      "type": "string",
+      "description": "Kendala yang dihadapi hari ini"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "selesai",
+        "sebagian",
+        "tidak_selesai"
+      ],
+      "default": "selesai",
+      "description": "Status penyelesaian aktivitas"
+    }
+  },
+  "required": [
+    "tanggal",
+    "shift",
+    "aktivitas"
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "name": "ProductionOrder",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "number",
+      "description": "Nomor urut PO sesuai spreadsheet"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Nama brand (misal: D'BLURE, SEVNOV)"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Nama produk spesifik"
+    },
+    "target_qty": {
+      "type": "number",
+      "description": "Target jumlah produksi"
+    },
+    "final_qty": {
+      "type": "number",
+      "description": "Jumlah final setelah filling (untuk Dynamic Qty)"
+    },
+    "is_dynamic_qty": {
+      "type": "boolean",
+      "default": false,
+      "description": "Apakah jumlah final mengikuti sisa racikan"
+    },
+    "ukuran_botol_ml": {
+      "type": "number",
+      "description": "Ukuran botol dalam ml"
+    },
+    "pic_marketing": {
+      "type": "string",
+      "description": "Email PIC marketing yang bertanggung jawab atas PO ini"
+    },
+    "racikan_digunakan": {
+      "type": "array",
+      "description": "Daftar racikan / formula dengan kalkulasi kebutuhan",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nama_bahan": {
+            "type": "string"
+          },
+          "kategori_bahan": {
+            "type": "string"
+          },
+          "persentase": {
+            "type": "number"
+          },
+          "vendor": {
+            "type": "string"
+          },
+          "kebutuhan_nilai": {
+            "type": "number"
+          },
+          "kebutuhan_satuan": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date",
+      "description": "Deadline pengiriman"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "diracik",
+        "maserasi",
+        "menunggu_filling",
+        "filling",
+        "menunggu_packing",
+        "packing",
+        "siap_kirim",
+        "done"
+      ],
+      "default": "pending"
+    },
+    "maserasi_start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "maserasi_end": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "maserasi_durasi_jam": {
+      "type": "number"
+    },
+    "maserasi_durasi_hari": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "stock_deducted": {
+      "type": "boolean",
+      "default": false
+    },
+    "stock_deducted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stock_deducted_trigger": {
+      "type": "string",
+      "enum": [
+        "in_progress",
+        "done",
+        "manual"
+      ]
+    },
+    "shipped_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "is_shipped": {
+      "type": "boolean",
+      "default": false
+    },
+    "shipping_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "shipping_address": {
+      "type": "string"
+    },
+    "courier": {
+      "type": "string"
+    },
+    "tracking_number": {
+      "type": "string"
+    },
+    "shipping_via": {
+      "type": "string"
+    },
+    "ongkir_payer": {
+      "type": "string",
+      "enum": [
+        "pabrik",
+        "customer"
+      ]
+    },
+    "ongkir_amount": {
+      "type": "number"
+    },
+    "purchase_statuses": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "inventory_item_id": {
+            "type": "string"
+          },
+          "item_name": {
+            "type": "string"
+          },
+          "vendor": {
+            "type": "string"
+          },
+          "qty_needed": {
+            "type": "number"
+          },
+          "stock_available": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string",
+            "default": "pcs"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "in_progress",
+              "ready",
+              "need_buy"
+            ],
+            "default": "pending"
+          },
+          "item_notes": {
+            "type": "string"
+          },
+          "is_integrated": {
+            "type": "boolean",
+            "default": true
+          },
+          "color_code": {
+            "type": "string"
+          },
+          "target_qty": {
+            "type": "number"
+          },
+          "current_qty": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "additional_components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string",
+            "default": "pcs"
+          },
+          "vendor": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "belum_dipesan",
+              "sudah_dipesan",
+              "sudah_diterima"
+            ],
+            "default": "belum_dipesan"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "brand_name",
+    "order_number"
+  ]
+}

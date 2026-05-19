@@ -1,0 +1,65 @@
+{
+  "name": "DailyProduction",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal produksi"
+    },
+    "production_order_id": {
+      "type": "string",
+      "description": "ID Production Order terkait"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Nama brand"
+    },
+    "activity": {
+      "type": "string",
+      "enum": [
+        "filling",
+        "sablon",
+        "perakitan",
+        "packing",
+        "labeling",
+        "sealing",
+        "quality_check",
+        "lainnya"
+      ],
+      "description": "Jenis aktivitas produksi"
+    },
+    "qty_produced": {
+      "type": "number",
+      "description": "Jumlah yang diproduksi hari ini"
+    },
+    "operator": {
+      "type": "string",
+      "description": "Nama operator/pekerja"
+    },
+    "shift": {
+      "type": "string",
+      "enum": [
+        "pagi",
+        "siang",
+        "malam"
+      ],
+      "default": "pagi"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Catatan kendala atau info tambahan"
+    },
+    "waste_qty": {
+      "type": "number",
+      "description": "Jumlah barang cacat/waste",
+      "default": 0
+    }
+  },
+  "required": [
+    "date",
+    "brand_name",
+    "activity",
+    "qty_produced"
+  ]
+}

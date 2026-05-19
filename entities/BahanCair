@@ -1,0 +1,57 @@
+{
+  "name": "BahanCair",
+  "type": "object",
+  "properties": {
+    "nama": {
+      "type": "string",
+      "description": "Nama bahan cair"
+    },
+    "kategori": {
+      "type": "string",
+      "enum": [
+        "Bibit",
+        "Alkohol",
+        "Aqua Des",
+        "DPG",
+        "Peg",
+        "Sustain",
+        "Lainnya"
+      ],
+      "description": "Kategori bahan"
+    },
+    "vendor": {
+      "type": "string",
+      "description": "Nama vendor/supplier"
+    },
+    "grade": {
+      "type": "string",
+      "enum": [
+        "Deluxe",
+        "Premium",
+        "Exclusive"
+      ],
+      "description": "Grade bibit (khusus vendor Parfarome)"
+    },
+    "harga_rupiah": {
+      "type": "number",
+      "description": "Harga per satuan dalam Rupiah"
+    },
+    "harga_dollar": {
+      "type": "number",
+      "description": "Harga per satuan dalam USD (opsional)"
+    },
+    "satuan": {
+      "type": "string",
+      "description": "Satuan bahan (ml, kg, liter, dll)"
+    },
+    "stok": {
+      "type": "number",
+      "description": "Jumlah stok"
+    }
+  },
+  "required": [
+    "nama",
+    "kategori",
+    "harga_rupiah"
+  ]
+}

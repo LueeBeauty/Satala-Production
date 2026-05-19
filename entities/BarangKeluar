@@ -1,0 +1,96 @@
+{
+  "name": "BarangKeluar",
+  "type": "object",
+  "properties": {
+    "nomor_referensi": {
+      "type": "string",
+      "description": "Nomor referensi dokumen barang keluar"
+    },
+    "tanggal": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal pengeluaran barang"
+    },
+    "tujuan": {
+      "type": "string",
+      "description": "Tujuan / customer"
+    },
+    "alasan": {
+      "type": "string",
+      "enum": [
+        "Produksi (PO)",
+        "Penjualan",
+        "Retur ke Supplier",
+        "Pemakaian Internal",
+        "Rusak/Dispose",
+        "Lainnya"
+      ],
+      "description": "Alasan pengeluaran barang"
+    },
+    "ekspedisi": {
+      "type": "string",
+      "description": "Nama ekspedisi / jasa pengiriman"
+    },
+    "ongkir": {
+      "type": "number",
+      "description": "Biaya ongkos kirim"
+    },
+    "ongkir_dibayar_oleh": {
+      "type": "string",
+      "description": "Siapa yang membayar ongkir",
+      "enum": [
+        "Perusahaan",
+        "Customer",
+        "Split"
+      ]
+    },
+    "pic": {
+      "type": "string",
+      "description": "Email PIC penanggung jawab"
+    },
+    "source_po_id": {
+      "type": "string",
+      "description": "ID ProductionOrder asal (jika auto-sync dari PO)"
+    },
+    "items": {
+      "type": "array",
+      "description": "Daftar barang keluar",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nama_barang": {
+            "type": "string"
+          },
+          "kategori": {
+            "type": "string"
+          },
+          "jumlah": {
+            "type": "number"
+          },
+          "satuan": {
+            "type": "string"
+          },
+          "vendor": {
+            "type": "string"
+          },
+          "item_id": {
+            "type": "string"
+          },
+          "item_tipe": {
+            "type": "string"
+          },
+          "inventory_item_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan tambahan"
+    }
+  },
+  "required": [
+    "tanggal"
+  ]
+}

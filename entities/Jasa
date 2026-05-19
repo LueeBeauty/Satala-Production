@@ -1,0 +1,42 @@
+{
+  "name": "Jasa",
+  "type": "object",
+  "properties": {
+    "nama": {
+      "type": "string",
+      "description": "Nama jasa (misal: Jasa Proses 30ml)"
+    },
+    "deskripsi": {
+      "type": "string",
+      "description": "Keterangan tambahan"
+    },
+    "tiers": {
+      "type": "array",
+      "description": "Daftar tier harga berdasarkan qty",
+      "items": {
+        "type": "object",
+        "properties": {
+          "qty_min": {
+            "type": "number",
+            "description": "Qty minimum (inklusif) untuk tier ini"
+          },
+          "qty_max": {
+            "type": "number",
+            "description": "Qty maksimum (inklusif), kosong = tidak terbatas"
+          },
+          "harga": {
+            "type": "number",
+            "description": "Harga per pcs untuk tier ini"
+          },
+          "label": {
+            "type": "string",
+            "description": "Label deskriptif (misal: < 500 pcs)"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "nama"
+  ]
+}

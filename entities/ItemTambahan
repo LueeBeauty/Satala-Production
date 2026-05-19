@@ -1,0 +1,44 @@
+{
+  "name": "ItemTambahan",
+  "type": "object",
+  "properties": {
+    "nama": {
+      "type": "string",
+      "description": "Nama item tambahan"
+    },
+    "kategori": {
+      "type": "string",
+      "enum": [
+        "Stiker",
+        "Dus",
+        "Gift Card",
+        "Lainnya"
+      ],
+      "description": "Kategori item tambahan"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Nama brand yang menggunakan item ini"
+    },
+    "harga_rupiah": {
+      "type": "number",
+      "description": "Harga per pcs dalam Rupiah"
+    },
+    "stok": {
+      "type": "number",
+      "description": "Jumlah stok saat ini (pcs)"
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan tambahan"
+    },
+    "vendor": {
+      "type": "string",
+      "description": "Vendor / supplier"
+    }
+  },
+  "required": [
+    "nama",
+    "kategori"
+  ]
+}

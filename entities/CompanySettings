@@ -1,0 +1,35 @@
+{
+  "name": "CompanySettings",
+  "type": "object",
+  "properties": {
+    "logo_url": {
+      "type": "string",
+      "description": "URL logo perusahaan"
+    },
+    "stempel_url": {
+      "type": "string",
+      "description": "URL stempel/cap perusahaan"
+    },
+    "ttd_url": {
+      "type": "string",
+      "description": "URL tanda tangan digital direktur"
+    },
+    "nama_perusahaan": {
+      "type": "string",
+      "description": "Nama lengkap perusahaan"
+    },
+    "alamat_perusahaan": {
+      "type": "string",
+      "description": "Alamat lengkap perusahaan"
+    },
+    "nama_direktur": {
+      "type": "string",
+      "description": "Nama direktur yang menandatangani"
+    },
+    "kota": {
+      "type": "string",
+      "description": "Kota (untuk kop tanda tangan, misal: Bogor)"
+    }
+  },
+  "required": []
+}

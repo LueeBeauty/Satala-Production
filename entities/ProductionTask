@@ -1,0 +1,121 @@
+{
+  "name": "ProductionTask",
+  "type": "object",
+  "properties": {
+    "task_name": {
+      "type": "string"
+    },
+    "po_id": {
+      "type": "string",
+      "description": "ID ProductionOrder yang terkait"
+    },
+    "po_number": {
+      "type": "string"
+    },
+    "po_brand": {
+      "type": "string",
+      "description": "Nama brand PO"
+    },
+    "activity_type": {
+      "type": "string",
+      "enum": [
+        "racik",
+        "maserasi",
+        "filling",
+        "packing",
+        "labeling",
+        "qc",
+        "preparation",
+        "other"
+      ],
+      "default": "filling"
+    },
+    "target_quantity": {
+      "type": "number"
+    },
+    "completed_quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "unit": {
+      "type": "string"
+    },
+    "pic_id": {
+      "type": "string"
+    },
+    "pic_name": {
+      "type": "string"
+    },
+    "helper_ids": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "assigned",
+        "in_progress",
+        "completed",
+        "on_hold",
+        "cancelled"
+      ],
+      "default": "assigned"
+    },
+    "task_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "duration_minutes": {
+      "type": "number"
+    },
+    "maserasi_jam": {
+      "type": "number",
+      "description": "Durasi maserasi dalam jam (diisi manual saat selesai racik)"
+    },
+    "maserasi_hari": {
+      "type": "number",
+      "description": "Durasi maserasi dalam hari"
+    },
+    "started_by_employee_id": {
+      "type": "string"
+    },
+    "started_by_name": {
+      "type": "string"
+    },
+    "completed_by_employee_id": {
+      "type": "string"
+    },
+    "completed_by_name": {
+      "type": "string"
+    },
+    "scan_logs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "saved_to_catatan": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "task_name",
+    "activity_type"
+  ]
+}

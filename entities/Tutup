@@ -1,0 +1,33 @@
+{
+  "name": "Tutup",
+  "type": "object",
+  "properties": {
+    "nama": {
+      "type": "string",
+      "description": "Nama tutup"
+    },
+    "ukuran_mm": {
+      "type": "number",
+      "description": "Diameter ukuran dalam mm"
+    },
+    "material": {
+      "type": "string",
+      "description": "Material tutup (plastik, aluminium, dll)"
+    },
+    "harga_rupiah": {
+      "type": "number",
+      "description": "Harga dalam Rupiah"
+    },
+    "stok": {
+      "type": "number",
+      "description": "Jumlah stok (pcs)"
+    },
+    "vendor": {
+      "type": "string",
+      "description": "Nama vendor / supplier tutup"
+    }
+  },
+  "required": [
+    "nama"
+  ]
+}

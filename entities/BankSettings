@@ -1,0 +1,33 @@
+{
+  "name": "BankSettings",
+  "type": "object",
+  "properties": {
+    "nama_bank": {
+      "type": "string",
+      "description": "Nama bank (misal: BCA, Mandiri, BNI)"
+    },
+    "nama_pemilik": {
+      "type": "string",
+      "description": "Nama pemilik rekening"
+    },
+    "nomor_rekening": {
+      "type": "string",
+      "description": "Nomor rekening bank"
+    },
+    "singkatan_invoice": {
+      "type": "string",
+      "description": "Singkatan unik untuk kode invoice (misal: ASB, CJT)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Apakah rekening ini aktif digunakan"
+    }
+  },
+  "required": [
+    "nama_bank",
+    "nama_pemilik",
+    "nomor_rekening",
+    "singkatan_invoice"
+  ]
+}

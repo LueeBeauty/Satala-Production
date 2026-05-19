@@ -1,0 +1,113 @@
+{
+  "name": "Produksi",
+  "type": "object",
+  "properties": {
+    "nomor_produksi": {
+      "type": "string",
+      "description": "Nomor batch produksi"
+    },
+    "tanggal": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal produksi"
+    },
+    "tipe": {
+      "type": "string",
+      "enum": [
+        "Produksi",
+        "Sample"
+      ],
+      "default": "Produksi",
+      "description": "Tipe kegiatan"
+    },
+    "nama_produk": {
+      "type": "string",
+      "description": "Nama produk yang diproduksi"
+    },
+    "jumlah_produk": {
+      "type": "number",
+      "description": "Jumlah produk yang dihasilkan (qty/pcs)"
+    },
+    "ukuran_botol_ml": {
+      "type": "number",
+      "description": "Ukuran botol dalam ml"
+    },
+    "satuan_produk": {
+      "type": "string",
+      "description": "Satuan produk (pcs, botol, dll)"
+    },
+    "racikan_digunakan": {
+      "type": "array",
+      "description": "Daftar racikan / formula yang digunakan beserta kalkulasi kebutuhan",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nama_bahan": {
+            "type": "string"
+          },
+          "kategori_bahan": {
+            "type": "string"
+          },
+          "persentase": {
+            "type": "number"
+          },
+          "vendor": {
+            "type": "string"
+          },
+          "kebutuhan_nilai": {
+            "type": "number"
+          },
+          "kebutuhan_satuan": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "bahan_digunakan": {
+      "type": "array",
+      "description": "Daftar bahan jadi / komponen yang digunakan",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stock_item_id": {
+            "type": "string"
+          },
+          "nama_barang": {
+            "type": "string"
+          },
+          "kategori": {
+            "type": "string"
+          },
+          "satuan": {
+            "type": "string"
+          },
+          "jumlah_digunakan": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan produksi"
+    },
+    "operator": {
+      "type": "string",
+      "description": "Nama/email operator"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proses",
+        "selesai",
+        "batal"
+      ],
+      "default": "selesai"
+    }
+  },
+  "required": [
+    "tanggal",
+    "tipe",
+    "nama_produk"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "StockItem",
+  "type": "object",
+  "properties": {
+    "nama": {
+      "type": "string",
+      "description": "Nama barang"
+    },
+    "kode": {
+      "type": "string",
+      "description": "Kode unik barang"
+    },
+    "kategori": {
+      "type": "string",
+      "enum": [
+        "Bahan",
+        "Kemasan"
+      ],
+      "description": "Kategori barang"
+    },
+    "satuan": {
+      "type": "string",
+      "description": "Satuan barang (pcs, kg, liter, dll)"
+    },
+    "stok_saat_ini": {
+      "type": "number",
+      "default": 0,
+      "description": "Jumlah stok saat ini"
+    },
+    "stok_minimum": {
+      "type": "number",
+      "default": 0,
+      "description": "Batas minimum stok sebelum warning"
+    },
+    "deskripsi": {
+      "type": "string",
+      "description": "Deskripsi tambahan"
+    }
+  },
+  "required": [
+    "nama",
+    "kategori",
+    "satuan"
+  ]
+}

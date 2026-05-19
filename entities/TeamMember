@@ -1,0 +1,68 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "employee_id": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "developer",
+        "owner",
+        "admin",
+        "supervisor_office",
+        "supervisor_produksi",
+        "operator_office",
+        "operator_produksi"
+      ],
+      "default": "operator_produksi"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "aktif",
+        "nonaktif"
+      ],
+      "default": "aktif"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "join_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "page_access": {
+      "type": "object",
+      "description": "Akses halaman per karyawan. Key = nama halaman, value = 'view' | 'edit' | 'none'"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "password",
+    "role"
+  ]
+}

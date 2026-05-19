@@ -1,0 +1,93 @@
+{
+  "name": "SampleRacikan",
+  "type": "object",
+  "properties": {
+    "nama_brand": {
+      "type": "string",
+      "description": "Nama brand"
+    },
+    "nama_produk": {
+      "type": "string",
+      "description": "Nama produk / varian"
+    },
+    "ukuran_ml": {
+      "type": "number",
+      "enum": [
+        5,
+        10,
+        20
+      ],
+      "description": "Ukuran sample dalam ml"
+    },
+    "kategori": {
+      "type": "string",
+      "enum": [
+        "SPL",
+        "Tes Aroma",
+        "Lainnya"
+      ],
+      "description": "Kategori tes sample"
+    },
+    "label": {
+      "type": "string",
+      "description": "Label sample (A, B, C, dst)"
+    },
+    "pic": {
+      "type": "string",
+      "description": "Penanggung jawab (PIC) - nama dari TeamMember"
+    },
+    "racikan": {
+      "type": "array",
+      "description": "Daftar bahan dalam racikan",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kategori_bahan": {
+            "type": "string",
+            "description": "Bibit, Alkohol, Aqua Des, DPG, IPM, Lainnya"
+          },
+          "vendor": {
+            "type": "string",
+            "description": "Nama vendor (khusus bibit)"
+          },
+          "nama_bahan": {
+            "type": "string"
+          },
+          "persentase": {
+            "type": "number",
+            "description": "Persentase dalam racikan"
+          },
+          "volume_ml": {
+            "type": "number",
+            "description": "Volume dalam ml (dihitung otomatis)"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "acc",
+        "revisi",
+        "ditolak"
+      ],
+      "default": "pending",
+      "description": "Status review sample"
+    },
+    "catatan_review": {
+      "type": "string",
+      "description": "Catatan dari reviewer"
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan tambahan"
+    }
+  },
+  "required": [
+    "nama_brand",
+    "nama_produk",
+    "ukuran_ml",
+    "kategori"
+  ]
+}

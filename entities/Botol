@@ -1,0 +1,42 @@
+{
+  "name": "Botol",
+  "type": "object",
+  "properties": {
+    "nama": {
+      "type": "string",
+      "description": "Nama botol"
+    },
+    "ukuran_label_ml": {
+      "type": "number",
+      "description": "Ukuran label dalam ml"
+    },
+    "ukuran_aktual_ml": {
+      "type": "number",
+      "description": "Ukuran aktual dalam ml (opsional)"
+    },
+    "harga_rupiah": {
+      "type": "number",
+      "description": "Harga dalam Rupiah"
+    },
+    "harga_dollar": {
+      "type": "number",
+      "description": "Harga dalam USD (opsional)"
+    },
+    "catatan_teknis": {
+      "type": "string",
+      "description": "Catatan teknis botol"
+    },
+    "stok": {
+      "type": "number",
+      "description": "Jumlah stok (pcs)"
+    },
+    "vendor": {
+      "type": "string",
+      "description": "Nama vendor / supplier botol"
+    }
+  },
+  "required": [
+    "nama",
+    "harga_rupiah"
+  ]
+}

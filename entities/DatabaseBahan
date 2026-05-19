@@ -1,0 +1,93 @@
+{
+  "name": "DatabaseBahan",
+  "type": "object",
+  "properties": {
+    "nama_brand": {
+      "type": "string",
+      "description": "Nama brand"
+    },
+    "nama_varian": {
+      "type": "string",
+      "description": "Nama varian / produk"
+    },
+    "botol_nama": {
+      "type": "string",
+      "description": "Nama botol yang digunakan"
+    },
+    "botol_ukuran_label_ml": {
+      "type": "number",
+      "description": "Ukuran label botol (ml)"
+    },
+    "botol_ukuran_aktual_ml": {
+      "type": "number",
+      "description": "Ukuran aktual botol (ml)"
+    },
+    "tutup_nama": {
+      "type": "string",
+      "description": "Nama tutup yang digunakan"
+    },
+    "spray_nama": {
+      "type": "string",
+      "description": "Nama spray yang digunakan"
+    },
+    "racikan": {
+      "type": "array",
+      "description": "Komposisi racikan / formula bahan cair",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nama_bahan": {
+            "type": "string"
+          },
+          "kategori_bahan": {
+            "type": "string"
+          },
+          "vendor": {
+            "type": "string"
+          },
+          "persentase": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "item_tambahan": {
+      "type": "array",
+      "description": "Item tambahan lainnya (stiker, dus, dll)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nama": {
+            "type": "string"
+          },
+          "kategori": {
+            "type": "string"
+          },
+          "qty_per_pcs": {
+            "type": "number",
+            "description": "Jumlah item per 1 produk jadi"
+          },
+          "catatan": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan tambahan"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "aktif",
+        "arsip"
+      ],
+      "default": "aktif"
+    }
+  },
+  "required": [
+    "nama_brand",
+    "nama_varian"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "DeliveryItem",
+  "type": "object",
+  "properties": {
+    "jenis": {
+      "type": "string",
+      "enum": [
+        "masuk",
+        "keluar"
+      ],
+      "description": "Jenis pergerakan barang: masuk atau keluar"
+    },
+    "nama_item": {
+      "type": "string",
+      "description": "Nama barang"
+    },
+    "kategori": {
+      "type": "string",
+      "description": "Kategori item: botol, tutup, spray, bahan, dll"
+    },
+    "jumlah": {
+      "type": "number",
+      "description": "Jumlah barang"
+    },
+    "satuan": {
+      "type": "string",
+      "description": "Satuan barang (pcs, kg, liter, dll)"
+    },
+    "tanggal": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal transaksi"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "sedang_po",
+        "dalam_perjalanan",
+        "sudah_sampai"
+      ],
+      "default": "sudah_sampai",
+      "description": "Status pengiriman"
+    },
+    "vendor": {
+      "type": "string",
+      "description": "Nama vendor / supplier"
+    },
+    "no_po": {
+      "type": "string",
+      "description": "Nomor PO referensi"
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan tambahan"
+    },
+    "inventory_item_id": {
+      "type": "string",
+      "description": "ID item inventori yang terhubung (opsional)"
+    },
+    "harga_satuan": {
+      "type": "number",
+      "description": "Harga per satuan"
+    }
+  },
+  "required": [
+    "jenis",
+    "nama_item",
+    "jumlah",
+    "tanggal"
+  ]
+}

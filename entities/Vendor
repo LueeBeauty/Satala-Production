@@ -1,0 +1,61 @@
+{
+  "name": "Vendor",
+  "type": "object",
+  "properties": {
+    "nama": {
+      "type": "string",
+      "description": "Nama vendor / supplier"
+    },
+    "kode": {
+      "type": "string",
+      "description": "Kode singkat vendor"
+    },
+    "kategori_bahan": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Kategori bahan yang disuplai (Bibit, Alkohol, DPG, dll)"
+    },
+    "kontak_person": {
+      "type": "string",
+      "description": "Nama kontak person"
+    },
+    "nomor_hp": {
+      "type": "string",
+      "description": "Nomor WhatsApp / HP"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email vendor"
+    },
+    "kota": {
+      "type": "string",
+      "description": "Kota / lokasi vendor"
+    },
+    "min_order": {
+      "type": "string",
+      "description": "Minimum order (contoh: 1 kg, 100 ml)"
+    },
+    "waktu_pengiriman": {
+      "type": "string",
+      "description": "Estimasi waktu pengiriman (contoh: 2-3 hari)"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Rating vendor 1-5"
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan tambahan tentang vendor"
+    },
+    "aktif": {
+      "type": "boolean",
+      "description": "Status vendor aktif atau tidak",
+      "default": true
+    }
+  },
+  "required": [
+    "nama"
+  ]
+}

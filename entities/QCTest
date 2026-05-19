@@ -1,0 +1,58 @@
+{
+  "name": "QCTest",
+  "type": "object",
+  "properties": {
+    "production_order_id": {
+      "type": "string",
+      "description": "ID Production Order terkait"
+    },
+    "brand_name": {
+      "type": "string"
+    },
+    "test_type": {
+      "type": "string",
+      "enum": [
+        "sillage",
+        "projection",
+        "longevity",
+        "stability",
+        "color_check",
+        "aroma_match"
+      ],
+      "description": "Jenis tes QC"
+    },
+    "test_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "result": {
+      "type": "string",
+      "description": "Hasil tes (deskripsi)"
+    },
+    "score": {
+      "type": "number",
+      "description": "Skor tes (1-10)"
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "acc",
+        "revision",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "approved_by": {
+      "type": "string",
+      "description": "Siapa yang meng-ACC"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "brand_name",
+    "test_type"
+  ]
+}

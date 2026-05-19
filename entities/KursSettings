@@ -1,0 +1,19 @@
+{
+  "name": "KursSettings",
+  "type": "object",
+  "properties": {
+    "kurs_dollar": {
+      "type": "number",
+      "description": "Nilai kurs USD ke IDR yang digunakan"
+    },
+    "is_manual": {
+      "type": "boolean",
+      "default": false,
+      "description": "True jika kurs diset manual, false jika menggunakan live"
+    }
+  },
+  "required": [
+    "kurs_dollar",
+    "is_manual"
+  ]
+}

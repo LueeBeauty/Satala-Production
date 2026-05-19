@@ -1,0 +1,227 @@
+{
+  "name": "RiwayatProduksi",
+  "type": "object",
+  "properties": {
+    "nama_brand": {
+      "type": "string",
+      "description": "Nama brand/klien"
+    },
+    "tanggal": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal produksi"
+    },
+    "pic": {
+      "type": "string",
+      "description": "Penanggung jawab (PIC) - nama dari TeamMember"
+    },
+    "status_bayar": {
+      "type": "string",
+      "enum": [
+        "Belum Bayar",
+        "Belum Lunas",
+        "Sudah Lunas"
+      ],
+      "default": "Belum Bayar",
+      "description": "Status pembayaran"
+    },
+    "jumlah_dibayar": {
+      "type": "number",
+      "description": "Jumlah yang sudah dibayar (Rupiah)",
+      "default": 0
+    },
+    "riwayat_pembayaran": {
+      "type": "array",
+      "description": "Riwayat setiap pemasukan pembayaran",
+      "items": {
+        "type": "object",
+        "properties": {
+          "jumlah": {
+            "type": "number",
+            "description": "Nominal pembayaran"
+          },
+          "tanggal_bayar": {
+            "type": "string",
+            "description": "Tanggal pembayaran (yyyy-MM-dd)"
+          },
+          "jam_bayar": {
+            "type": "string",
+            "description": "Jam pembayaran (HH:mm:ss)"
+          },
+          "catatan": {
+            "type": "string",
+            "description": "Catatan opsional"
+          }
+        }
+      }
+    },
+    "total_hpp_semua": {
+      "type": "number",
+      "description": "Total HPP semua produk"
+    },
+    "total_harga_jual_semua": {
+      "type": "number",
+      "description": "Total harga jual semua produk"
+    },
+    "total_margin_nominal_semua": {
+      "type": "number",
+      "description": "Total margin profit nominal semua produk"
+    },
+    "catatan_global": {
+      "type": "string",
+      "description": "Catatan umum produksi"
+    },
+    "legalitas": {
+      "type": "array",
+      "description": "Daftar biaya legalitas (HAKI, BPOM, dll)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nama": {
+            "type": "string"
+          },
+          "nominal": {
+            "type": "number"
+          },
+          "harga_beli": {
+            "type": "number",
+            "description": "Harga beli (HPP) legalitas"
+          },
+          "harga_jual": {
+            "type": "number",
+            "description": "Harga jual ke customer"
+          },
+          "qty_variant": {
+            "type": "number",
+            "description": "Jumlah variant (khusus BPOM)"
+          }
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "description": "Daftar produk dalam produksi ini",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nama_product": {
+            "type": "string"
+          },
+          "botol_nama": {
+            "type": "string"
+          },
+          "botol_ukuran_label": {
+            "type": "number"
+          },
+          "botol_ukuran_aktual": {
+            "type": "number"
+          },
+          "botol_harga": {
+            "type": "number"
+          },
+          "botol_harga_beli": {
+            "type": "number"
+          },
+          "tutup_nama": {
+            "type": "string"
+          },
+          "tutup_harga": {
+            "type": "number"
+          },
+          "tutup_harga_beli": {
+            "type": "number"
+          },
+          "spray_nama": {
+            "type": "string"
+          },
+          "spray_harga": {
+            "type": "number"
+          },
+          "spray_harga_beli": {
+            "type": "number"
+          },
+          "qty": {
+            "type": "number"
+          },
+          "hpp_per_pcs_label": {
+            "type": "number"
+          },
+          "hpp_per_pcs_digunakan": {
+            "type": "number"
+          },
+          "total_hpp_product": {
+            "type": "number"
+          },
+          "harga_jual_per_pcs": {
+            "type": "number"
+          },
+          "total_harga_jual": {
+            "type": "number"
+          },
+          "margin_nominal_per_pcs": {
+            "type": "number"
+          },
+          "margin_persen": {
+            "type": "number"
+          },
+          "jasa_nominal": {
+            "type": "number"
+          },
+          "racikan": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "bahan_nama": {
+                  "type": "string"
+                },
+                "vendor": {
+                  "type": "string"
+                },
+                "kategori": {
+                  "type": "string"
+                },
+                "persentase": {
+                  "type": "number"
+                },
+                "volume_ml": {
+                  "type": "number"
+                },
+                "hpp_bahan": {
+                  "type": "number"
+                },
+                "harga_per_satuan": {
+                  "type": "number"
+                },
+                "satuan": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "komponen_tambahan": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "nama": {
+                  "type": "string"
+                },
+                "kategori": {
+                  "type": "string"
+                },
+                "harga": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "nama_brand",
+    "tanggal"
+  ]
+}

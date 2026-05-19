@@ -1,0 +1,58 @@
+{
+  "name": "HargaVendor",
+  "type": "object",
+  "properties": {
+    "vendor_id": {
+      "type": "string",
+      "description": "ID vendor"
+    },
+    "vendor_nama": {
+      "type": "string",
+      "description": "Nama vendor (cache)"
+    },
+    "bahan_id": {
+      "type": "string",
+      "description": "ID bahan cair"
+    },
+    "bahan_nama": {
+      "type": "string",
+      "description": "Nama bahan (cache)"
+    },
+    "bahan_kategori": {
+      "type": "string",
+      "description": "Kategori bahan"
+    },
+    "harga_rupiah": {
+      "type": "number",
+      "description": "Harga per satuan dalam Rupiah"
+    },
+    "satuan": {
+      "type": "string",
+      "description": "Satuan (kg, liter, ml, gram)"
+    },
+    "min_order_qty": {
+      "type": "number",
+      "description": "Minimum order quantity"
+    },
+    "min_order_satuan": {
+      "type": "string",
+      "description": "Satuan minimum order"
+    },
+    "catatan": {
+      "type": "string",
+      "description": "Catatan harga (mis: harga promo, syarat, dll)"
+    },
+    "tanggal_update": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal update harga terakhir"
+    }
+  },
+  "required": [
+    "vendor_id",
+    "vendor_nama",
+    "bahan_id",
+    "bahan_nama",
+    "harga_rupiah"
+  ]
+}

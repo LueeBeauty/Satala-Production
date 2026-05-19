@@ -1,0 +1,53 @@
+{
+  "name": "InventoryItem",
+  "type": "object",
+  "properties": {
+    "item_name": {
+      "type": "string",
+      "description": "Nama item inventori"
+    },
+    "kode": {
+      "type": "string",
+      "description": "Kode unik item"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "bibit",
+        "botol",
+        "tutup",
+        "spray",
+        "segel",
+        "lainnya"
+      ],
+      "description": "Kategori komponen"
+    },
+    "total_stock": {
+      "type": "number",
+      "description": "Stok total tersedia"
+    },
+    "minimum_stock": {
+      "type": "number",
+      "default": 0,
+      "description": "Batas minimum stok sebelum warning"
+    },
+    "allocated_qty": {
+      "type": "number",
+      "description": "Jumlah yang sudah dialokasikan ke PO"
+    },
+    "vendor": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string",
+      "default": "pcs"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "item_name",
+    "category"
+  ]
+}
